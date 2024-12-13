@@ -1,0 +1,56 @@
+To install Node.js on CentOS, follow the steps below:
+
+### Step 1: Update Your System
+First, update the package list to make sure your system is up to date:
+```bash
+sudo yum update -y
+```
+
+### Step 2: Install the Node.js Repository
+There are two common ways to install Node.js on CentOS: using the NodeSource repository or using the default CentOS repository. The NodeSource repository is recommended because it provides the latest stable versions of Node.js.
+
+#### Option 1: Using NodeSource Repository
+
+1. **Add the NodeSource repository**:
+   To install Node.js, use the NodeSource repository. The following command will add the repository for the latest Node.js version (you can replace `setup_16.x` with another version if needed, like `setup_18.x` for Node.js 18):
+   ```bash
+   curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
+   ```
+
+2. **Install Node.js**:
+   After adding the NodeSource repository, install Node.js with the following command:
+   ```bash
+   sudo yum install -y nodejs
+   ```
+
+#### Option 2: Using CentOS Default Repository
+Node.js is available in CentOS's default repository, but it may not be the latest version.
+
+1. **Install Node.js**:
+   ```bash
+   sudo yum install -y nodejs
+   ```
+
+### Step 3: Verify the Installation
+Once the installation is complete, verify that Node.js and npm (Node Package Manager) are installed correctly.
+
+1. **Check Node.js version**:
+   ```bash
+   node -v
+   ```
+
+2. **Check npm version**:
+   ```bash
+   npm -v
+   ```
+
+This should output the version of Node.js and npm installed on your system.
+
+### Step 4: Install Additional Development Tools (Optional)
+If you want to build native modules from source (e.g., when installing some npm packages), you'll need development tools such as `gcc` and `make`. To install them, run:
+```bash
+sudo yum groupinstall "Development Tools" -y
+```
+
+### Conclusion
+You have successfully installed Node.js on CentOS! You can now use Node.js and npm to develop JavaScript applications.
